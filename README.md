@@ -28,5 +28,5 @@ c) Postman collection for integration tests: [petstore.postman_collection.jason]
 
 d) A flow diagram for the CI/CD pipeline: [3d-high-level-ci-cd-flow.png](https://github.com/Bookanakere/vfz-qa-assessment/tree/master/src/test/3d-high-level-ci-cd-flow.png)
 
-e) Description of other tests: [3e-description-of-other-tests](https://github.com/Bookanakere/vfz-qa-assessment/tree/master/src/test/3e-description-of-other-tests)
+e) Description of other tests: [3e-description-of-other-tests](https://github.com/Bookanakere/vfz-qa-assessment/blob/master/src/test/3e-description-of-other-tests.pdf)
             

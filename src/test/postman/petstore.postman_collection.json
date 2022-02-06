@@ -1,0 +1,991 @@
+{
+	"info": {
+		"_postman_id": "f0f34e10-75d4-4285-b74b-332378306481",
+		"name": "petstore",
+		"description": "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.\n\nContact Support:\n Email: apiteam@swagger.io",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pet",
+			"item": [
+				{
+					"name": "AddNewPetStatus200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// set",
+									"var responseBody = JSON.parse(responseBody);",
+									"pm.collectionVariables.set('pet-id', responseBody.id)",
+									"",
+									"// assert",
+									"pm.test(\"Status code is 200 \", function() {",
+									"    pm.response.to.have.status(200)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 0,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"Tango\",\n  \"photoUrls\": [\n    \"\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AddNewPetStatus200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"Tango\",\n  \"photoUrls\": [\n    \"\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 12:48:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9223372036854775807,\n    \"category\": {\n        \"id\": 0,\n        \"name\": \"string\"\n    },\n    \"name\": \"Tango\",\n    \"photoUrls\": [\n        \"\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 0,\n            \"name\": \"string\"\n        }\n    ],\n    \"status\": \"available\"\n}"
+						}
+					]
+				},
+				{
+					"name": "AddNewPetStatus405",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Status code is 405 \", function() {",
+									"    pm.response.to.have.status(405)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -250,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"Tango\",\n  \"photoUrls\": [\n    \"\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "AddNewPetStatus405",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -250,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"Tango\",\n  \"photoUrls\": [\n    \"\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 14:07:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9223372036854775807,\n    \"category\": {\n        \"id\": 0,\n        \"name\": \"string\"\n    },\n    \"name\": \"Tango\",\n    \"photoUrls\": [\n        \"\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 0,\n            \"name\": \"string\"\n        }\n    ],\n    \"status\": \"available\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateExistingPetStatus200",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": {{pet-id}},\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateExistingPetStatus200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": {{pet-id}},\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 13:24:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9222968140491042131,\n    \"category\": {\n        \"id\": 0,\n        \"name\": \"string\"\n    },\n    \"name\": \"doggie\",\n    \"photoUrls\": [\n        \"string\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 0,\n            \"name\": \"string\"\n        }\n    ],\n    \"status\": \"available\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateExistingPetStatus400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -2,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"Tango\",\n  \"photoUrls\": [\n    \"\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateExistingPetStatus400",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"doggie\",\n    \"photoUrls\": [\n        \"sunt sit nisi adipisicing\",\n        \"et dolore irure dolor\"\n    ],\n    \"id\": -23,\n    \"category\": {\n        \"id\": 4945324,\n        \"name\": \"amet dolor ut\"\n    },\n    \"tags\": [\n        {\n            \"id\": 64905107,\n            \"name\": \"laborum consectetur\"\n        },\n        {\n            \"id\": -23924894,\n            \"name\": \"ut incididunt Lorem aute\"\n        }\n    ],\n    \"status\": \"sold\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 14:53:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9223372036854775807,\n    \"category\": {\n        \"id\": 4945324,\n        \"name\": \"amet dolor ut\"\n    },\n    \"name\": \"doggie\",\n    \"photoUrls\": [\n        \"sunt sit nisi adipisicing\",\n        \"et dolore irure dolor\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 64905107,\n            \"name\": \"laborum consectetur\"\n        },\n        {\n            \"id\": -23924894,\n            \"name\": \"ut incididunt Lorem aute\"\n        }\n    ],\n    \"status\": \"sold\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateExistingPetStatus404",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 9999999999,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"Tango\",\n  \"photoUrls\": [\n    \"\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pet",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateExistingPetStatus404",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 9999999999,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"Tango\",\n  \"photoUrls\": [\n    \"\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pet",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 14:55:21 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 9999999999,\n    \"category\": {\n        \"id\": 0,\n        \"name\": \"string\"\n    },\n    \"name\": \"Tango\",\n    \"photoUrls\": [\n        \"\"\n    ],\n    \"tags\": [\n        {\n            \"id\": 0,\n            \"name\": \"string\"\n        }\n    ],\n    \"status\": \"available\"\n}"
+						}
+					]
+				},
+				{
+					"name": "FindPetsByStatus",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"tests[\"Body is not empty\"] = (responseBody !=null);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pet/findByStatus?status=available",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "available",
+									"description": "(Required) Status values that need to be considered for filter"
+								}
+							]
+						},
+						"description": "Multiple status values can be provided with comma separated strings"
+					},
+					"response": [
+						{
+							"name": "StatusAvailable",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/pet/findByStatus?status=available",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "available",
+											"description": "(Required) Status values that need to be considered for filter"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 13:12:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 9222968140491042131,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097497,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097499,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097500,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097502,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097503,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097504,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097506,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097507,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 991,\n        \"category\": {\n            \"id\": 87,\n            \"name\": \"category991\"\n        },\n        \"name\": \"Llama\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097508,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9222968140491042146,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Puff\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1241,\n        \"category\": {\n            \"id\": 1231414,\n            \"name\": \"yuri category\"\n        },\n        \"name\": \"yuri pet\",\n        \"photoUrls\": [\n            \"teste\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 124124,\n                \"name\": \"yuri tag\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 10,\n        \"category\": {\n            \"id\": 10,\n            \"name\": \"My Category Name\"\n        },\n        \"name\": \"My Pet Name\",\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097517,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097518,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097519,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097520,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097521,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097522,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097523,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 2323,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"dog\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"tomy\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097524,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097526,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097527,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097528,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097529,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097530,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097531,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097532,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097533,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097534,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097535,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097536,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097537,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9222968140497180179,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"test\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097546,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097547,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097553,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097554,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097555,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097556,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097557,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097558,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097559,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097560,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097561,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097562,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"fish\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097576,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Puff\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097577,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372036854775807,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 10001002,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"cattiks\"\n        },\n        \"name\": \"murza\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 11,\n        \"category\": {\n            \"id\": 11,\n            \"name\": \"Bulldog\"\n        },\n        \"name\": \"mike\",\n        \"photoUrls\": [\n            \"www.pet.com/add\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 11,\n                \"name\": \"jade\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1245,\n        \"category\": {\n            \"id\": 1245,\n            \"name\": \"xyz\"\n        },\n        \"name\": \"xyz\",\n        \"photoUrls\": [\n            \"test\"\n        ],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 112200,\n        \"category\": {\n            \"id\": 101,\n            \"name\": \"german shepard\"\n        },\n        \"name\": \"new doggie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 102,\n                \"name\": \"new string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 3114,\n        \"category\": {\n            \"id\": 3114,\n            \"name\": \"string\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"abc\",\n            \"def\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"test0\"\n            },\n            {\n                \"id\": 1,\n                \"name\": \"test1\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 3111992,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Svetlana\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097586,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Puff\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 15092000,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Raketa\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 15092001,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Raketa\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 15092004,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Raketa\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 9223372000666097608,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Puff\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 13101989,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Bonia\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 13101990,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Bonia\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 13101993,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Bonia\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 12042002,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Ruslana\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 12042003,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Ruslana\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 12042004,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Ruslana\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 12042006,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Ruslana\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 786,\n        \"category\": {\n            \"id\": 567,\n            \"name\": \"Sameena\"\n        },\n        \"name\": \"Raand\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 5678,\n                \"name\": \"Rajamma\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1999,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"NationalBird\"\n        },\n        \"name\": \"Peacock\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 10003,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"rat\"\n        },\n        \"name\": \"Shaddy\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1100,\n        \"category\": {\n            \"id\": 1100,\n            \"name\": \"tom\"\n        },\n        \"name\": \"doggie-tom\",\n        \"photoUrls\": [\n            \"url1\",\n            \"url2\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1100,\n                \"name\": \"tom\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 111,\n        \"category\": {\n            \"id\": 222,\n            \"name\": \"Test dog category\"\n        },\n        \"name\": \"TestName\",\n        \"photoUrls\": [],\n        \"tags\": [\n            {\n                \"id\": 333,\n                \"name\": \"Test tag\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 1214,\n        \"category\": {\n            \"id\": 2\n        },\n        \"name\": \"TestPet\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 6439816,\n        \"category\": {\n            \"id\": 2\n        },\n        \"name\": \"triton\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 246810,\n        \"category\": {\n            \"id\": 891011,\n            \"name\": \"manasa\"\n        },\n        \"name\": \"pomorian\",\n        \"photoUrls\": [\n            \"https://www.amazon.in/s?k=dogs+home&hvadid=82738420630653&hvbmt=bb&hvdev=c&hvqmt=b&tag=msndeskstdin-21&ref=pd_sl_9k192l9h3h_b\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 5678,\n                \"name\": \"abcdefg\"\n            },\n            {\n                \"id\": 91011,\n                \"name\": \"asdf\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 766,\n        \"name\": \"Jolie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 61,\n        \"name\": \"Roderick\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 449,\n        \"name\": \"Casey\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 936,\n        \"name\": \"Darion\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 727,\n        \"name\": \"Nestor\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 162,\n        \"name\": \"Dahlia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 805,\n        \"name\": \"Andreanne\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 125,\n        \"name\": \"Brielle\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 809,\n        \"name\": \"Priscilla\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 669,\n        \"name\": \"Mohammad\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 877,\n        \"name\": \"Odessa\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 524,\n        \"name\": \"Alexandro\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 620,\n        \"name\": \"Ezekiel\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 980,\n        \"name\": \"Gillian\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 268,\n        \"name\": \"Annalise\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 754,\n        \"name\": \"Isaias\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 726,\n        \"name\": \"Ayden\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 794,\n        \"name\": \"Courtney\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 282,\n        \"name\": \"Gail\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 128,\n        \"name\": \"Ervin\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 474,\n        \"name\": \"Kenyatta\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 593,\n        \"name\": \"Concepcion\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 176,\n        \"name\": \"Giovanny\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 615,\n        \"name\": \"Donna\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 834,\n        \"name\": \"Elizabeth\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 450,\n        \"name\": \"Mellie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 356,\n        \"name\": \"Virgie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 970,\n        \"name\": \"Pat\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 895,\n        \"name\": \"Anissa\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 173,\n        \"name\": \"Amaya\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 591,\n        \"name\": \"Cassandre\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 59,\n        \"name\": \"Modesta\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 799,\n        \"name\": \"Lelia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 616,\n        \"name\": \"Anissa\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 130,\n        \"name\": \"Duncan\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 104,\n        \"name\": \"Mortimer\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 84,\n        \"name\": \"Jazmyne\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 481,\n        \"name\": \"Rosalee\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 733,\n        \"name\": \"Jaycee\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 67,\n        \"name\": \"Dayne\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 100,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"cat\"\n        },\n        \"name\": \"mika\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 565,\n        \"name\": \"Dereck\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 735,\n        \"name\": \"Mylene\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 5489,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Cat\"\n        },\n        \"name\": \"Missi\",\n        \"photoUrls\": [],\n        \"tags\": [\n            {\n                \"id\": 35,\n                \"name\": \"British cat\"\n            }\n        ],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 956,\n        \"name\": \"Axel\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 673,\n        \"name\": \"Kali\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 785,\n        \"name\": \"Dustin\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 365,\n        \"name\": \"Alycia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 141,\n        \"name\": \"Alanna\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 829,\n        \"name\": \"Evans\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 969,\n        \"name\": \"Emely\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 665,\n        \"name\": \"Ofelia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 739,\n        \"name\": \"Nichole\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 604,\n        \"name\": \"Kenneth\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 113,\n        \"name\": \"Antoinette\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 480,\n        \"name\": \"Cecil\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 444,\n        \"name\": \"Abbigail\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 574,\n        \"name\": \"Ruthe\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 992,\n        \"name\": \"Anastasia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 719,\n        \"name\": \"Adell\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 441,\n        \"name\": \"Oran\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 744,\n        \"name\": \"Audreanne\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 603,\n        \"name\": \"Reilly\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 229,\n        \"name\": \"Osbaldo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 366,\n        \"name\": \"Erling\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 695,\n        \"name\": \"Jedediah\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 622,\n        \"name\": \"Arvilla\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 427,\n        \"name\": \"Miguel\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 414,\n        \"name\": \"Raphael\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 160,\n        \"name\": \"Sarai\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 161,\n        \"name\": \"Rosina\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 537,\n        \"name\": \"Damien\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 371,\n        \"name\": \"Chaz\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 567,\n        \"name\": \"Modesta\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 948,\n        \"name\": \"Boyd\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 451,\n        \"name\": \"Liliane\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 876,\n        \"name\": \"Ruthie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 295,\n        \"name\": \"Carlee\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 388,\n        \"name\": \"Deon\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 852,\n        \"name\": \"Greta\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 297,\n        \"name\": \"Eliezer\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 257,\n        \"name\": \"Bernardo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 314,\n        \"name\": \"Enola\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    },\n    {\n        \"id\": 485,\n        \"name\": \"Emmy\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"available\"\n    }\n]"
+						},
+						{
+							"name": "StatusPending",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/pet/findByStatus?status=pending",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 13:31:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 10001001,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"mouse\"\n        },\n        \"name\": \"musik\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": 81723614,\n        \"category\": {\n            \"id\": -35894100,\n            \"name\": \"sit reprehenderit fugiat amet aliqua\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"occaecat nostrud dolore fugiat tempor\",\n            \"id est\"\n        ],\n        \"tags\": [\n            {\n                \"id\": -85885711,\n                \"name\": \"pariatur labore Lorem\"\n            },\n            {\n                \"id\": -37987020,\n                \"name\": \"v\"\n            }\n        ],\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": 12186624,\n        \"category\": {\n            \"id\": 57588260,\n            \"name\": \"veniam labore occaecat\"\n        },\n        \"name\": \"Keyala\",\n        \"photoUrls\": [\n            \"dolor commodo ex dolor id\",\n            \"irure\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 26380727,\n                \"name\": \"in sunt elit\"\n            },\n            {\n                \"id\": -43605412,\n                \"name\": \"ad incididunt pariatur officia exercitation\"\n            }\n        ],\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": 9223372000666097588,\n        \"category\": {\n            \"id\": 4,\n            \"name\": \"dog\"\n        },\n        \"name\": \"fluffy\",\n        \"photoUrls\": [\n            \"\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"blue eyes\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"kitty\"\n            }\n        ],\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": 9223372000666097589,\n        \"category\": {\n            \"id\": 4,\n            \"name\": \"dog\"\n        },\n        \"name\": \"fluffy\",\n        \"photoUrls\": [\n            \"\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"blue eyes\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"kitty\"\n            }\n        ],\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": 111,\n        \"category\": {\n            \"id\": -40098615,\n            \"name\": \"ea reprehenderit amet esse vol\"\n        },\n        \"name\": \"DOG\",\n        \"photoUrls\": [\n            \"incididunt anim\",\n            \"in nulla ea\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 62299127,\n                \"name\": \"occaecat voluptate tempor dolor velit\"\n            },\n            {\n                \"id\": -6821658,\n                \"name\": \"Lorem laboris amet in sunt\"\n            }\n        ],\n        \"status\": \"pending\"\n    },\n    {\n        \"id\": 10002,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"cat\"\n        },\n        \"name\": \"Smally\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"pending\"\n    }\n]"
+						},
+						{
+							"name": "StatusSold",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/pet/findByStatus?status=sold",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "sold"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 13:32:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 10001,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"c\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"dt\"\n            }\n        ],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 15435006001660,\n        \"category\": {\n            \"id\": 2432432,\n            \"name\": \"category_name\"\n        },\n        \"name\": \"5239423\",\n        \"photoUrls\": [\n            \"test URL\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 5,\n                \"name\": \"fact tag\"\n            }\n        ],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 1122338455331,\n        \"category\": {\n            \"id\": 5436,\n            \"name\": \"soaspec_test\"\n        },\n        \"name\": \"Charlie\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 9,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"cats\"\n        },\n        \"name\": \"King Kong\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 10051995,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"string\"\n        },\n        \"name\": \"Bagira\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 47,\n        \"name\": \"Okey\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 74408294,\n        \"category\": {\n            \"id\": 70278030,\n            \"name\": \"in adipisicing\"\n        },\n        \"name\": \"doggie\",\n        \"photoUrls\": [\n            \"nostrud sunt eu occaecat elit\",\n            \"esse aute non magna\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 81618844,\n                \"name\": \"id aliquip\"\n            },\n            {\n                \"id\": -96817599,\n                \"name\": \"ut elit esse\"\n            }\n        ],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 1000,\n        \"name\": \"Conner\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 29,\n        \"name\": \"Garland\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 361,\n        \"name\": \"Thea\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 353,\n        \"name\": \"Chadd\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 58,\n        \"name\": \"Vella\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 813,\n        \"name\": \"Ivory\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 400,\n        \"name\": \"Lorenzo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 194,\n        \"name\": \"Ramona\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 844,\n        \"name\": \"Annamae\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 256,\n        \"name\": \"Carmel\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 752,\n        \"name\": \"Clementina\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 966,\n        \"name\": \"Curtis\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 523,\n        \"name\": \"Orville\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 156,\n        \"name\": \"Jaylon\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 885,\n        \"name\": \"Maximillian\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 634,\n        \"name\": \"Rocky\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 377,\n        \"name\": \"Eden\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 317,\n        \"name\": \"Nathanael\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 38,\n        \"name\": \"Bria\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 219,\n        \"name\": \"Daniela\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 360,\n        \"name\": \"Alva\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 188,\n        \"name\": \"Kathleen\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 261,\n        \"name\": \"Ole\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 405,\n        \"name\": \"Amya\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 949,\n        \"name\": \"Kaylah\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 374,\n        \"name\": \"Shyann\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 13,\n        \"name\": \"Aleen\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 875,\n        \"name\": \"Conor\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 44,\n        \"name\": \"Courtney\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 692,\n        \"name\": \"Deion\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 254,\n        \"name\": \"Joshuah\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 292,\n        \"name\": \"Regan\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 184,\n        \"name\": \"Floyd\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 423,\n        \"name\": \"Reid\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 674,\n        \"name\": \"Pamela\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 896,\n        \"name\": \"Thea\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 847,\n        \"name\": \"Alessia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 395,\n        \"name\": \"Jadon\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 458,\n        \"name\": \"Jules\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 672,\n        \"name\": \"Millie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 581,\n        \"name\": \"Joana\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 255,\n        \"name\": \"Nicklaus\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 544,\n        \"name\": \"Geovanny\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 667,\n        \"name\": \"Isabell\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 730,\n        \"name\": \"Bartholome\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 890,\n        \"name\": \"Lonzo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 101,\n        \"name\": \"Angeline\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 64,\n        \"name\": \"Shayne\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 490,\n        \"name\": \"Casey\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 746,\n        \"name\": \"Madaline\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 477,\n        \"name\": \"Federico\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 550,\n        \"name\": \"Arnold\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 594,\n        \"name\": \"Art\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 309,\n        \"name\": \"Keven\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 796,\n        \"name\": \"Irma\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 69,\n        \"name\": \"Earlene\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 143,\n        \"name\": \"Ruthe\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 853,\n        \"name\": \"Carmelo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 683,\n        \"name\": \"Douglas\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 248,\n        \"name\": \"Lavinia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 656,\n        \"name\": \"Karson\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 632,\n        \"name\": \"Kaitlyn\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 446,\n        \"name\": \"Ole\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 323,\n        \"name\": \"Yasmeen\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 368,\n        \"name\": \"Kailyn\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 768,\n        \"name\": \"Andy\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 85,\n        \"name\": \"Anthony\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 521,\n        \"name\": \"Darion\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 362,\n        \"name\": \"Jeramie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 300,\n        \"name\": \"Jayden\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 660,\n        \"name\": \"Evangeline\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 330,\n        \"name\": \"Newell\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 851,\n        \"name\": \"Althea\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 671,\n        \"name\": \"Elijah\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 648,\n        \"name\": \"Keith\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 461,\n        \"name\": \"Nathen\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 433,\n        \"name\": \"Frida\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 298,\n        \"name\": \"Daniella\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 810,\n        \"name\": \"Janis\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 986,\n        \"name\": \"Samara\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 27,\n        \"name\": \"Dante\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 347,\n        \"name\": \"Oral\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 511,\n        \"name\": \"Madilyn\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 411,\n        \"name\": \"Zola\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 7574746,\n        \"category\": {\n            \"id\": 1,\n            \"name\": \"Cat\"\n        },\n        \"name\": \"Hardy\",\n        \"photoUrls\": [\n            \"https://i.pinimg.com/originals/5c/2c/44/5c2c44f16da1caf134c00bc4f9c72ea0.jpg\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 7805,\n                \"name\": \"Mainecoon\"\n            }\n        ],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 704,\n        \"name\": \"Saul\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 408,\n        \"name\": \"Danny\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 996,\n        \"name\": \"Charlie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 641,\n        \"name\": \"Gracie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 942,\n        \"name\": \"Dangelo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 252,\n        \"name\": \"Sydni\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 743,\n        \"name\": \"Eduardo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 178,\n        \"name\": \"Amelie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 215,\n        \"name\": \"Vernie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 575,\n        \"name\": \"Rodger\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 779,\n        \"name\": \"Ian\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 88,\n        \"name\": \"Anabel\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 639,\n        \"name\": \"Liliana\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 510,\n        \"name\": \"Raheem\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 185,\n        \"name\": \"Stevie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 975,\n        \"name\": \"Ardith\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 121,\n        \"name\": \"Rachelle\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 840,\n        \"name\": \"Daija\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 682,\n        \"name\": \"Whitney\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 870,\n        \"name\": \"Mia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 21,\n        \"name\": \"Favian\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 833,\n        \"name\": \"Freddie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 340,\n        \"name\": \"Zola\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 336,\n        \"name\": \"Amie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 774,\n        \"name\": \"Thalia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 148,\n        \"name\": \"Amira\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 955,\n        \"name\": \"Verda\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 756,\n        \"name\": \"Syble\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 420,\n        \"name\": \"Henderson\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 180,\n        \"name\": \"Fatima\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 127,\n        \"name\": \"Ward\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 475,\n        \"name\": \"Abelardo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 600,\n        \"name\": \"Lyda\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 621,\n        \"name\": \"Coleman\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 326,\n        \"name\": \"Sophia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 338,\n        \"name\": \"Earlene\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 238,\n        \"name\": \"Aleen\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 569,\n        \"name\": \"Jalon\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 419,\n        \"name\": \"Minerva\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 978,\n        \"name\": \"Vivien\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 623,\n        \"name\": \"Trinity\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 778,\n        \"name\": \"Malvina\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 579,\n        \"name\": \"Orpha\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 68,\n        \"name\": \"Taylor\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 157,\n        \"name\": \"Joaquin\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 780,\n        \"name\": \"Horace\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 466,\n        \"name\": \"Alfonzo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 815,\n        \"name\": \"Abe\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 819,\n        \"name\": \"Della\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 106,\n        \"name\": \"Pauline\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 358,\n        \"name\": \"Vinnie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 863,\n        \"name\": \"Arjun\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 855,\n        \"name\": \"Trisha\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 880,\n        \"name\": \"Delphia\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 382,\n        \"name\": \"Dedric\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 448,\n        \"name\": \"Harmon\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 134,\n        \"name\": \"Devonte\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 89,\n        \"name\": \"Ida\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 495,\n        \"name\": \"Alice\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 659,\n        \"name\": \"Amira\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 484,\n        \"name\": \"Dayna\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 492,\n        \"name\": \"Theron\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 152,\n        \"name\": \"Magnus\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 638,\n        \"name\": \"Jaime\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 304,\n        \"name\": \"Aracely\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 381,\n        \"name\": \"Jarod\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 418,\n        \"name\": \"Santiago\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 655,\n        \"name\": \"Johnathon\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 306,\n        \"name\": \"Dewayne\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 212,\n        \"name\": \"Blair\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 210,\n        \"name\": \"Stefan\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 831,\n        \"name\": \"Dewitt\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 275,\n        \"name\": \"Clara\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 872,\n        \"name\": \"Casper\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 517,\n        \"name\": \"Pat\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 459,\n        \"name\": \"Ceasar\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 57,\n        \"name\": \"Audrey\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Loyce\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 777,\n        \"name\": \"Haylie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 560,\n        \"name\": \"Presley\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 599,\n        \"name\": \"Kianna\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 208,\n        \"name\": \"Bailey\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 825,\n        \"name\": \"Dovie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 260,\n        \"name\": \"Janae\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 195,\n        \"name\": \"Jonatan\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 174,\n        \"name\": \"Destinee\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 905,\n        \"name\": \"Will\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 808,\n        \"name\": \"Alexandria\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 577,\n        \"name\": \"Rylee\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 860,\n        \"name\": \"Cleo\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 801,\n        \"name\": \"Ward\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 894,\n        \"name\": \"Kelsi\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 914,\n        \"name\": \"Frank\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 951,\n        \"name\": \"Ellie\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 676,\n        \"name\": \"Francis\",\n        \"photoUrls\": [],\n        \"tags\": [],\n        \"status\": \"sold\"\n    },\n    {\n        \"id\": 12,\n        \"category\": {\n            \"id\": 0,\n            \"name\": \"dogs\"\n        },\n        \"name\": \"Fido\",\n        \"photoUrls\": [\n            \"string\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 0,\n                \"name\": \"string\"\n            }\n        ],\n        \"status\": \"sold\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "FindPetsByStatusInvalidStatusValue",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"tests[\"Body is  empty\"] = (responseBody =null);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pet/findByStatus?status=test",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "test",
+									"description": "(Required) Status values that need to be considered for filter"
+								}
+							]
+						},
+						"description": "Multiple status values can be provided with comma separated strings"
+					},
+					"response": [
+						{
+							"name": "FindPetsByStatusInvalidStatusValue",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/pet/findByStatus?status=test",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "test",
+											"description": "(Required) Status values that need to be considered for filter"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 05 Feb 2022 14:59:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, DELETE, PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, api_key, Authorization"
+								},
+								{
+									"key": "Server",
+									"value": "Jetty(9.2.9.v20150224)"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 50,\n        \"category\": {\n            \"id\": 19,\n            \"name\": \"Browny\"\n        },\n        \"name\": \"doggi\",\n        \"photoUrls\": [\n            \"https://imgur.com/a/uvVbEf1\"\n        ],\n        \"tags\": [\n            {\n                \"id\": 88,\n                \"name\": \"Brown1\"\n            }\n        ],\n        \"status\": \"test\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://petstore.swagger.io/v2",
+			"type": "string"
+		},
+		{
+			"key": "pet-id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

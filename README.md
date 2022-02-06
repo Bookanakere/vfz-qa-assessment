@@ -23,6 +23,7 @@ b)  With unit tests
     1) PetApiControllerTest.java contains unit tests for these three methods
     2) Unit tests are written with @SpringBootTest and @MockMVC
     3) Download this repo and run 'mvn clean verify' to build and run the unit tests
+    4) Few tests fail as the corresponding functionalities are not implemented yet in the methods
 
 c) Postman collection for integration tests: [petstore.postman_collection.jason](https://github.com/Bookanakere/vfz-qa-assessment/tree/master/src/test/postman)
 
